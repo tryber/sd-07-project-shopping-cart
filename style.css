@@ -1,3 +1,38 @@
+* {
+  margin: 0;
+  outline: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Roboto, sans-serif;
+  position: relative;
+}
+
+.loading-content {
+  align-items: center;
+  background: rgb( 63, 60, 60 );
+  color: white;
+  display: flex;
+  font-size: 20px;
+  height: 100vh;
+  justify-content: center;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100vw;
+}
+
+.loading {
+  align-items: center;
+  border: 10px solid white;
+  border-radius: 50%;
+  display: flex;
+  height: 200px;
+  justify-content: center;
+  width: 200px;
+}
+
 .top-bar {
   align-items: center;
   display: flex;
@@ -19,8 +54,28 @@
 
 .container {
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
   width: 100%;
+}
+
+header {
+  align-items: center;
+  background-color: rgb( 255, 241, 89 );
+  display: flex;
+  width: 100%;
+}
+
+header h1 {
+  margin: 30px 0;
+  text-align: center;
+  width: 100%;
+}
+
+.content {
+  display: flex;
+  flex-direction: column-reverse;
+  padding: 10px;
 }
 
 .items {
@@ -38,39 +93,93 @@
   flex-direction: column;
   height: auto;
   margin: 5px;
-  width: 200px;
+  max-width: 350px;
+  width: 100%;
 }
 
-.item .item__sku {
+.item .title-image {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.item .title-image .item__sku {
   display: none;
 }
 
-.item .item__title {
+.item .title-image .item__title {
   flex-grow: 1;
   padding: 10px;
   text-align: center;
 }
 
-.item .item__image {
+.item .title-image .item__image {
+  max-width: 60px;
   width: 100%;
 }
 
 .item .item__add {
   background-color: green;
   border: 0;
+  color: white;
   cursor: pointer;
+  font-size: 18px;
+  font-weight: 700;
   margin: 0;
   padding: 5px;
 }
 
 .cart {
+  box-shadow: 0 0 5px 0.2px gray;
   display: flex;
   flex-basis: 30%;
   flex-flow: column wrap;
+  padding: 20px;
+  position: relative;
+}
+
+.cart .empty-cart {
+  background-color: red;
+  border-radius: 5px;
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
 }
 
 .cart .cart__title {
   flex-basis: 1;
   font-size: 16pt;
+  font-weight: 700;
+  margin-bottom: 10px;
   text-align: center;
+}
+
+.price {
+  display: flex;
+  margin-top: 20px;
+}
+
+@media ( min-width : 720px ) {
+
+  header h1 {
+    font-size: 35px;
+  }
+
+  .content {
+    flex-direction: row;
+    padding: 10px;
+  }
+
+  .item {
+    max-width: 270px;
+  }
+
+  .item .title-image {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .item .title-image .item__image {
+    max-width: none;
+    width: 100%;
+  }
 }

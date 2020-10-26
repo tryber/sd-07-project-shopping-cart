@@ -1,3 +1,7 @@
+body {
+  display: flex;
+}
+
 .top-bar {
   align-items: center;
   display: flex;
@@ -19,6 +23,7 @@
 
 .container {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   width: 100%;
 }

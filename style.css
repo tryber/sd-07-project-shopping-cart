@@ -74,3 +74,11 @@
   font-size: 16pt;
   text-align: center;
 }
+
+.loading {
+  color: black;
+  font-size: 6rem;
+  left: 30rem;
+  position: absolute;
+  top: 10rem;
+}

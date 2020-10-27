@@ -64,13 +64,30 @@
 }
 
 .cart {
+  border: 2px solid blue;
+  border-radius: 5px;
   display: flex;
   flex-basis: 30%;
   flex-flow: column wrap;
+  height: fit-content;
+  margin: 5px;
+  padding: 5px;
 }
 
 .cart .cart__title {
   flex-basis: 1;
   font-size: 16pt;
   text-align: center;
+}
+
+.loading {
+  font-size: 48px;
+}
+
+.total-price {
+  font-weight: 700;
+}
+
+.cart__item:hover {
+  cursor: pointer;
 }

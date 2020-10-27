@@ -31,6 +31,7 @@
 }
 
 .item {
+  background-color: red;
   border: 2px solid blue;
   border-radius: 5px;
   box-sizing: border-box;

@@ -4,3 +4,10 @@
 .vscode
 node_modules/
 cypress/reports
+forestadmin/
+cypress/
+cypress.json
+package.json
+package-lock.json
+reporter.json
+yarn.lock

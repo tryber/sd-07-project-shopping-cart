@@ -74,3 +74,20 @@
   font-size: 16pt;
   text-align: center;
 }
+
+.loading {
+  background-color: black;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.loading h1 {
+  color: white;
+  display: flex;
+  font-family: Arial, Helvetica, sans-serif;
+  justify-content: center;
+}

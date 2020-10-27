@@ -74,3 +74,21 @@
   font-size: 16pt;
   text-align: center;
 }
+
+/* Loader: https://www.w3schools.com/howto/howto_css_loader.asp */
+
+.loader {
+  animation: spin 1s linear infinite;
+  border: 6px solid rgb ( 243 , 243 , 243 );
+  border-radius: 50%;
+  border-top: 6px solid rgb ( 52 , 152 , 219 );
+  height: 20px;
+  width: 20px;
+}
+
+@keyframes spin {
+
+  0% { transform: rotate( 0deg ); }
+
+  100% { transform: rotate( 360deg ); }
+}

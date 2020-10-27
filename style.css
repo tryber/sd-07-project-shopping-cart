@@ -23,6 +23,14 @@
   width: 100%;
 }
 
+.loading {
+  border: 6px solid honeydew;
+  border-radius: 50%;
+  border-top-color: crimson;
+  height: 50px;
+  width: 50px;
+}
+
 .items {
   display: flex;
   flex-basis: 70%;
@@ -61,6 +69,10 @@
   cursor: pointer;
   margin: 0;
   padding: 5px;
+}
+
+.cart__item {
+  cursor: pointer;
 }
 
 .cart {

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,11 +11,14 @@
 
   <body>
     <section class="container">
-      <section class="items"></section>
+      <section class="items" id="presentationItems">
+        <h2 class="loading">Loading...</h2>
+      </section>
       <section class="cart">
         <span class="cart__title">Carrinho de compras</span>
         <button class="empty-cart">Esvaziar carrinho</button>
-        <ol class="cart__items"></ol>
+        <ul class="cart__items"></ul>
+        <div>Preço Total: <span class="total-price"></span></div>
       </section>
     </section>
   </body>

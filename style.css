@@ -1,3 +1,7 @@
+body {
+  font-family: Open Sans, sans-serif;
+}
+
 .top-bar {
   align-items: center;
   display: flex;
@@ -30,14 +34,27 @@
   justify-content: center;
 }
 
-.item {
-  border: 2px solid blue;
+.item , .cart {
+
+  /* border: 2px solid blue;
   border-radius: 5px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   height: auto;
   margin: 5px;
+  width: 200px; */
+  background: white;
+  border-radius: 2px;
+  box-shadow: 0 2px 2px 0 rgba( 0, 0, 0, 0.14 ),
+    0 3px 1px -2px rgba( 0, 0, 0, 0.2 ),
+    0 1px 5px 0 rgba( 0, 0, 0, 0.12 );
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: auto;
+  margin: 10px 7px;
   width: 200px;
 }
 
@@ -46,31 +63,100 @@
 }
 
 .item .item__title {
-  flex-grow: 1;
+
+  /* flex-grow: 1;
   padding: 10px;
+  text-align: center; */
+  color: rgba( 0, 0, 0, 0.54 );
+  font-size: 1rem;
+  line-height: 18px;
+  overflow: hidden;
+  padding: 16px;
   text-align: center;
+  width: 90%;
 }
 
 .item .item__image {
-  width: 100%;
+  align-self: center;
+  width: 90%;
 }
 
-.item .item__add {
-  background-color: green;
+.item .item__add , .empty-cart {
+
+  /* background-color: green;
   border: 0;
   cursor: pointer;
   margin: 0;
-  padding: 5px;
+  padding: 5px; */
+  align-items: center;
+  background-color: rgb( 3, 111, 169 );
+  border: none;
+  color: white;
+  display: flex;
+  font-family: inherit;
+  height: 30px;
+  justify-content: center;
+  margin-top: 10px;
+  outline: none;
+}
+
+.empty-cart {
+  align-self: flex-end;
+  border-radius: 5px;
+  margin-right: 10px;
+  width: 180px;
+}
+
+.item .item__add:hover , .empty-cart:hover {
+  background-color: rgb( 83, 157, 219 );
+  color: black;
+  cursor: pointer;
 }
 
 .cart {
   display: flex;
   flex-basis: 30%;
   flex-flow: column wrap;
+  justify-content: flex-start;
+  height: fit-content;
 }
 
 .cart .cart__title {
+  background-color: rgb( 83, 157, 219 );
   flex-basis: 1;
-  font-size: 16pt;
+  font-size: 36pt;
   text-align: center;
+  text-shadow: 2px 2px 5px rgb( 3, 111, 169 );
 }
+
+.cart .cart__items .cart__item {
+  margin-bottom: 5px;
+  padding-right: 5px;
+}
+
+.loading {
+  background-color: white;
+  display: flex;
+  font-size: 50px;
+  margin-top: 100px;
+  position: fixed;
+}
+
+/* CSS Loader from w3schools.com */
+.loader {
+  border: 16px solid rgba( 0, 0, 0, 0.54 );
+  border-top: 16px solid rgb( 83, 157, 219 );
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+
+  0% { transform: rotate( 0deg ); }
+
+  100% { transform: rotate( 360deg ); }
+}
+
+/* https://www.w3schools.com/howto/howto_css_loader.asp */

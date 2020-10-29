@@ -83,6 +83,7 @@ body {
 }
 
 .logo-svg {
+  cursor: pointer;
   height: 3rem;
 }
 
@@ -187,6 +188,7 @@ body {
   flex-direction: column;
   height: auto;
   margin: 5px;
+  padding: 10px;
   width: 200px;
 }
 

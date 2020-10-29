@@ -1,12 +1,12 @@
 body {
-  background-color: rgb(237,237,237);
+  background-color: rgb( 237, 237, 237 );
   margin: 0;
   padding: 0;
 }
 
 .nav-header {
   align-items: center;
-  background-color: rgb(89, 255, 111);
+  background-color: rgb( 89, 255, 111 );
   display: flex;
   padding-top: 8px;
   justify-content: center;
@@ -15,14 +15,14 @@ body {
 
 .btn {
   background-color: white;
-  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.233);
+  box-shadow: 1px 1px 5px rgba( 0, 0, 0, 0.233 );
   border: 0;
   height: 40px;
   outline: none;
 }
 
 .btn:active {
-  background-color: rgb(223, 223, 223);
+  background-color: rgb( 223, 223, 223 );
   border-style: none;
 }
 
@@ -41,11 +41,11 @@ body {
 }
 
 .search-bar input:active {
-  background-color: rgb(255, 255, 255);
+  background-color: white;
 }
 
 .search-bar button {
-  background-color: rgb(241, 241, 241);
+  background-color: rgb( 241, 241, 241 );
 }
 
 .input-currency {
@@ -65,7 +65,7 @@ body {
 
 .selected-currency {
   align-items: center;
-  background-color:rgb(15,163,107);
+  background-color: rgb( 15, 163, 107 );
   border-radius: 50%;
   color: white;
   display: flex;
@@ -76,7 +76,7 @@ body {
 
 .shadow-currency {
   align-items: center;
-  color: rgb(65, 65, 65);
+  color: rgb( 65, 65, 65 );
   display: flex;
   height: 35px;
   width: 35px;
@@ -87,26 +87,26 @@ body {
 }
 
 .logo-ark {
-  background-color: rgb(24,26,24);
+  background-color: rgb( 24, 26, 24 );
 }
 
 .logo-background {
-  fill: rgb(15,163,107);
+  fill: rgb( 15, 163, 107 );
 }
 
 .logo-symbol {
-  fill: rgb(24,26,24);
+  fill: rgb( 24, 26, 24 );
 }
 
 .logo-text {
-  fill: rgb(24,26,24);
+  fill: rgb( 24, 26, 24 );
 }
 
 .nav-header span {
   align-items: center;
-  background-color: rgb(89, 255, 111);
-  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.233);
-  color: rgb(0, 0, 0);
+  background-color: rgb( 89, 255, 111 );
+  box-shadow: 0 1px 10px rgba( 24, 24, 24, 0.233 );
+  color: black;
   display: flex;
   font-size: large;
   height: 30px;
@@ -136,11 +136,11 @@ body {
 
 .banner {
   align-items: center;
-  background-image: url("/banner.jpg");
+  background-image: url( '/banner.jpg' );
   background-size: cover;
   background-position-y: center;
   background-attachment: fixed;
-  box-shadow:inset 0 0 0 1000px rgba(24, 155, 103, 0.562);
+  box-shadow: inset 0 0 0 1000px rgba( 24, 155, 103, 0.562 );
   display: flex;
   height: 120px;
   justify-content: center;
@@ -151,7 +151,7 @@ body {
   border-radius: 3rem;
   color: white;
   font-size: 3em;
-  font-family: 'dpcomicregular', Courier, monospace;
+  font-family: dpcomicregular, Courier, monospace;
   padding: 10px;
 }
 
@@ -160,17 +160,14 @@ body {
 }
 
 .banner span:hover {
-  color: rgb(255, 0, 0);
-  border: 3px solid rgb(255, 0, 0);
+  color: red;
+  border: 3px solid red;
 }
 
 .container {
   display: flex;
   justify-content: space-around;
-  margin-bottom: 30px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 30px;
+  margin: 30px auto auto 30px;
   width: 90vw;
 }
 
@@ -185,7 +182,7 @@ body {
   background-color: white;
   border-radius: 5px;
   box-sizing: border-box;
-  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.233);
+  box-shadow: 1px 1px 5px rgba( 0, 0, 0, 0.233 );
   display: flex;
   flex-direction: column;
   height: auto;
@@ -194,8 +191,8 @@ body {
 }
 
 .item:hover {
-  box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.233);
-  transition: 50ms;
+  box-shadow: 0 20px 20px rgba( 32, 32, 32, 0.233 );
+  transition: 100ms;
 }
 
 .item .item__sku {
@@ -210,7 +207,7 @@ body {
 }
 
 .item .item__price__credit {
-  color: rgb(0,166,80);
+  color: rgb( 0, 166, 80 );
   text-align: center;
 }
 
@@ -226,11 +223,11 @@ body {
 
 .item .item__add {
   border: 0;
-  color: rgb(15,163,107);
+  color: rgb( 15, 163, 107 );
   cursor: pointer;
   font-size: xx-large;
   font-weight: 800;
-  text-shadow: 0px 2px 3px rgba(0, 0, 0, 0.247);
+  text-shadow: 0 2px 3px rgba( 27, 27, 27, 0.247 );
   margin: 0;
   padding: 5px;
 }

@@ -13,10 +13,10 @@ function createCustomElement(element, className, innerText) {
 }
 
 const createPriceElement = (price) => {
-  let getCurrency = document.querySelector('.selected-currency').getAttribute('currency');
+  const getCurrency = document.querySelector('.selected-currency').getAttribute('currency');
   console.log(getCurrency);
   return `${getCurrency} ${price}`;
-}
+};
 
 function createProductItemElement({ sku, name, image, price }) {
   const section = document.createElement('section');
@@ -39,25 +39,8 @@ function createProductItemElement({ sku, name, image, price }) {
 
 const getSearchItem = () => {
   const searchInput = document.querySelector('#search-input').value;
-  document.querySelector('#search-input').value = '';
   return searchInput;
-}
-
-const settingsSearchBtn = () => {
-  const searchBtn = document.querySelector('#search-btn');
-  searchBtn.addEventListener('click', () => {
-    const searchInput = document.querySelector('#search-input').value;
-    if (searchInput !== '') {
-      const items = document.querySelector('#items');
-      if (items !== '') {
-        items.innerHTML = '';
-        createProductList(getSearchItem());
-      } else {
-        createProductList(getSearchItem());
-      }
-    }
-  })
-}
+};
 
 // Baseado na aula do Vitor
 const createProductList = (searchFor) => {
@@ -68,10 +51,30 @@ const createProductList = (searchFor) => {
     const items = document.querySelector('.items');
 
     data.results.forEach((product) => {
-      const { id: sku, title: name, thumbnail: image, price: price } = product;
+      const { id: sku, title: name, thumbnail: image, price } = product;
       const item = createProductItemElement({ sku, name, image, price });
       items.appendChild(item);
     });
+  });
+};
+
+const executeSearch = (input) => {
+  if (input !== '') {
+    const items = document.querySelector('#items');
+    if (items !== '') {
+      items.innerHTML = '';
+      createProductList(getSearchItem());
+    } else {
+      createProductList(getSearchItem());
+    }
+  }
+};
+
+const settingsSearchBtn = () => {
+  const searchBtn = document.querySelector('#search-btn');
+  searchBtn.addEventListener('click', () => {
+    const searchInput = document.querySelector('#search-input').value;
+    executeSearch(searchInput);
   });
 };
 
@@ -95,27 +98,29 @@ const settingsCartBtn = () => {
       cart.style.display = 'flex';
       cartIsShown = true;
     }
-  })
-}
+  });
+};
 
 const selectCurrency = () => {
   const inputCurrency = document.querySelector('#input-currency');
   const firstCurrency = document.querySelector('#first-currency');
   const secondCurrency = document.querySelector('#second-currency');
-  
+
   let boo = true;
   inputCurrency.addEventListener('click', () => {
     if (boo) {
       firstCurrency.className = 'shadow-currency';
       secondCurrency.className = 'selected-currency';
       boo = false;
+      executeSearch();
     } else {
       secondCurrency.className = 'shadow-currency';
       firstCurrency.className = 'selected-currency';
       boo = true;
+      executeSearch();
     }
   });
-}
+};
 
 window.onload = function onload() {
   settingsCartBtn();

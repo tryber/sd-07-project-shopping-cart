@@ -10,12 +10,23 @@
   </head>
 
   <body>
+    <header class=".top-bar">
+      <h1>Merca Trybe Libre</h1>
+    </header>
     <section class="container">
       <section class="items"></section>
       <section class="cart">
         <span class="cart__title">Carrinho de compras</span>
         <button class="empty-cart">Esvaziar carrinho</button>
-        <ol class="cart__items"></ol>
+        <section class="cart-items">
+          <ul class="cart__items"></ul>
+        </section>
+        <section class="price">
+          <div class="currency">
+            <img src="src/currency.svg" alt="" srcset="">
+          </div>
+          <span class="total-price"></span>
+        </section>
       </section>
     </section>
   </body>

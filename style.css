@@ -137,7 +137,7 @@ body {
 
 .banner {
   align-items: center;
-  background-image: url( '/banner.jpg' );
+  background-image: url( '/images/banner.jpg' );
   background-size: cover;
   background-position-y: center;
   background-attachment: fixed;

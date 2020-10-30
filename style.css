@@ -7,9 +7,22 @@
   width: 100%;
 }
 
+.cart__items {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 .top-bar .input-name-group {
   align-items: flex-start;
   display: flex;
+}
+
+.total-price-child {
+  border-radius: 5px;
+  display: flex;
+  font-weight: 700;
+  justify-content: center;
+  padding: 5px;
 }
 
 .top-bar .input-terms-group {
@@ -67,9 +80,12 @@
   display: flex;
   flex-basis: 30%;
   flex-flow: column wrap;
+  line-height: 30px;
+  margin-top: 20px;
 }
 
 .cart .cart__title {
+  margin: 10px;
   flex-basis: 1;
   font-size: 16pt;
   text-align: center;

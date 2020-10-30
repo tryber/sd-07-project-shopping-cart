@@ -5,18 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css" />
-    <script src="script.js"></script>
   </head>
 
   <body>
+    <!-- <section class="search-box">
+      <div class="search-form">
+        <input type="text" class="form-control" id="search-input">
+        <button class="btn btn-success" id="search-button">Pesquisar</button>
+      </div>
+    </section> -->
     <section class="container">
-      <section class="items"></section>
+      <section class="items">
+      </section>
       <section class="cart">
         <span class="cart__title">Carrinho de compras</span>
         <button class="empty-cart">Esvaziar carrinho</button>
         <ol class="cart__items"></ol>
+      <div class="total-price"></div>
       </section>
     </section>
+
+    <script src="script.js"></script>
   </body>
 </html>

@@ -27,7 +27,7 @@
   display: flex;
   flex-basis: 70%;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 
 .item {
@@ -73,4 +73,44 @@
   flex-basis: 1;
   font-size: 16pt;
   text-align: center;
+}
+
+.card-img-top {
+  height: 300px;
+}
+
+.card {
+  border: 1px ridge green;
+  text-align: center;
+  justify-content: center;
+}
+
+.search-box {
+  display: flex;
+  padding: 10px;
+  justify-content: center;
+  background-color: black;
+  margin-bottom: 10px;
+}
+
+.search-form {
+  width: 600px;
+  display: flex;
+}
+
+.custom-file {
+  width: 40%;
+  padding-top: 10px;
+}
+
+.total-price {
+  color: green;
+}
+
+.loading {
+  margin-top: 300px;
+  position: fixed;
+  background-color: red;
+  padding: 10px;
+  font-size: 20px;
 }

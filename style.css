@@ -74,3 +74,13 @@
   font-size: 16pt;
   text-align: center;
 }
+
+.loading {
+  color: blue;
+  font-size: 30px;
+}
+
+.total {
+  display: flex;
+  flex-direction: row;
+}

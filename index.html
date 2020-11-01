@@ -1,20 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
+    <title>Mercado Trybe</title>
     <link rel="stylesheet" href="style.css" />
     <script src="script.js"></script>
+    <link rel="stylesheet" href="/fonts/stylesheet.css" />
   </head>
 
   <body>
+    <header class="nav-header">
+      <svg class="logo-svg" id="logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23.283 5.556">
+        <path class="logo-ark" d="M3.175 0v.265H6.35V0H3.175zM6.35.265v.264h1.058V.265H6.35zm-3.175 0H2.117V.53h1.058V.265zM2.117.53h-.794v.264h.794V.53zm-.794.264h-.53l.001.264h.529V.795zm-.529.264H.53v.265h.264v-.265zm-.264.265H.265v.529H0v1.852h.265v.53H.53v.264h.265v.264h.529v.265h.794v.265h1.058v.264H6.35v-.264h1.058v-.265h.794v-.265h.53v-.264h.264v-.265h.264v-.529h.265V1.852l-.265.001V2.91h-.264v.794H8.73v.265H8.2v.264h-.793v.265H6.35v.264H3.175v-.264H2.117v-.265h-.794V3.97h-.53v-.265H.53V2.91H.265V1.853H.53v-.53zm8.73.53v-.53h-.264v.53h.264zm-.264-.53v-.265h-.264v.265h.264zm-.264-.265V.794h-.53v.264h.53zm-.53-.264V.53h-.794v.264h.794zm-4.232 0H2.91h1.06zm.262 0h1.06-1.06z"/>
+        <path class="logo-background" d="M3.175.265v.264H2.117v.265h-.794v.264h-.53v.265H.53v.53H.265V2.91h.264v.794h.265v.265h.529v.264h.794v.265h1.058v.264H6.35v-.264h1.058v-.265h.794V3.97h.53v-.265h.264V2.91h.264V1.852h-.264v-.53H8.73v-.264h-.529V.794h-.794V.529H6.35V.265H4.762zM2.91.794h1.06v.529h.264v-.53h1.058v.53h.264v-.53h1.059v.794H6.35v.265h-.265v.265h-.264v.264h-.265v.265h-.264v1.852H4.233V2.646H3.97V2.38h-.265v-.264H3.44v-.265h-.265v-.265H2.91v-.264zm2.382.529h-.265v.264h.265zm-.265.264h-.529v.265h.529zm-.53 0v-.264h-.264v.264z"/>
+        <path class="logo-text" d="M20.902.53v.529h-.794v.264h-.264v.794h.264v.264h1.059v-.264h.264V.53h-.53zM10.848.792v.002-.002zm0 .002v.263h-.265V2.38h.53V1.058h.264V.794h-.53zm1.058 0v.263h.265V2.38h.529V1.058h-.265V.794h-.529zm0 .263h-.528v.794h.528v-.794zm1.323 0v.265h-.264v.794h.264v.264h1.058v-.264h-.793v-.265h1.059v-.53h-.266v-.264h-1.058zm1.852 0v.265h-.264V2.38h.53v-.794h.263v-.264h.265v-.265h-.794zm1.323 0v.265h-.264v.794h.264v.264h1.058v-.264h-.793v-.794h.793v-.265h-1.058zm1.588 0v.265h-.265v.264h.529v.265h.53v.265h-.53v-.265h-.53v.265h.266v.264h1.587v-.264h-.264v-.794h-.265v-.265h-1.058zm3.968 0v.265h-.264v.794h.264v.264h1.059v-.264h.264v-.794h-.264v-.265H21.96zm-8.467.265h.531v.264h-.531v-.264zm4.764 0h.528v.264h-.528v-.264zm2.116 0h.53v.794h-.53v-.794zm1.852 0h.53v.794h-.53v-.794zm-5.821 1.322l-.53.001v1.587h.266v.265h1.058v-.265h.264V3.44h-.264v-.265h-.794v-.53zm-5.82.265zm0 0v.53h.264v-.265h.264v1.323h.53V3.175h.264v.265h.265v-.53h-1.587zm2.116.266v.264h-.265v1.058h.53v-.794h.264V3.44h.265v-.265H12.7zm1.058 0v.264h.265v.793h.264v.265h.794v.264h-1.058v.265h1.323V4.76h.264V3.175h-.529v1.058h-.53V3.44h-.264v-.265h-.529zm4.234 0v.264h-.265v.793h.265v.265h1.058v-.265h-.794V3.97h1.059v-.53h-.265v-.265h-1.058zm-1.59.264h.531v.793h-.53V3.44zm1.853 0h.53v.264h-.53v-.264z"/>
+        <path class="logo-symbol" d="M2.91.794v.793h.265v.265h.265v.265h.264v.264h.265v.265h.264v1.852h1.06V2.646h.263V2.38h.265v-.264h.264v-.265h.265v-.265h.265V.794H5.556v.529h-.264v.264h-.265v.265h-.53v-.265h-.264v-.264h.265v.264h.529v-.264h.265V.794h-1.06v.529H3.97V.794H2.91z"/>
+      </svg>
+      <div class="search-bar">
+        <button class="btn" id="search-btn">Pesquisa</button>
+        <input class="btn" id="search-input" type="text" value="computador">
+      </div>
+
+      <div class="btn input-currency" id="input-currency">
+        <div class="selected-currency" id="first-currency" currency="R$">BRL</div>
+        <div class="shadow-currency" id="second-currency" currency="₱">PHP</div>
+      </div>
+      <span>*Para validar o desconto a pessoa estudante deve comprovar ter alcançado 100% dos requisitos de todos os projetos</span>
+    </header>
+
+    <section class="banner">
+      <span><strong>100% OFF</strong> para trybers*</span>
+    </section>
+
+    <div class="load-place"></div>
     <section class="container">
-      <section class="items"></section>
-      <section class="cart">
+      <section class="items" id="items">
+      </section>
+      <section class="cart" id="cart">
         <span class="cart__title">Carrinho de compras</span>
         <button class="empty-cart">Esvaziar carrinho</button>
+        <span>Total: <span class="total-price"></span></span>
         <ol class="cart__items"></ol>
       </section>
     </section>

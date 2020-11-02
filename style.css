@@ -1,3 +1,22 @@
+.loading {
+  animation: is-rotating 1s infinite;
+  border: 6px solid honeydew;
+  border-radius: 50%;
+  border-top-color: green;
+  height: 50px;
+  width: 50px;
+}
+
+/* prettier-ignore */
+
+@keyframes is-rotating {
+
+  to {
+    transform: rotate( 1turn );
+  }
+}
+
+/* trecho retirado do site https://desenvolvimentoparaweb.com/css/animacao-loading-css/ */
 .top-bar {
   align-items: center;
   display: flex;
@@ -64,6 +83,9 @@
 }
 
 .cart {
+  border: 2px solid blue;
+  border-radius: 5px;
+  box-sizing: border-box;
   display: flex;
   flex-basis: 30%;
   flex-flow: column wrap;
@@ -73,4 +95,8 @@
   flex-basis: 1;
   font-size: 16pt;
   text-align: center;
+}
+
+.cart__item {
+  cursor: pointer;
 }

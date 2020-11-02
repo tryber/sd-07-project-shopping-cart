@@ -49,9 +49,9 @@ function getSkuFromProductItem(item) {
   return item.querySelector('span.item__sku').innerText;
 }
 
-// function cartItemClickListener(event) {
-  // coloque seu código aqui
-// }
+function cartItemClickListener(event) {
+  event.target.remove();
+}
 
 const products = () => {
   const endpoint = 'https://api.mercadolibre.com/sites/MLB/search?q=computador';

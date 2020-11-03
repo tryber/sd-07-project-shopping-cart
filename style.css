@@ -64,12 +64,14 @@
 }
 
 .cart {
+  border: 2px solid gray;
   display: flex;
   flex-basis: 30%;
   flex-flow: column wrap;
 }
 
 .cart .cart__title {
+  background-color: green;
   flex-basis: 1;
   font-size: 16pt;
   text-align: center;

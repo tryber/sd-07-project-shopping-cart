@@ -1,3 +1,7 @@
+div {
+  display: contents;
+}
+
 .top-bar {
   align-items: center;
   display: flex;

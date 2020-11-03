@@ -96,6 +96,6 @@ const emptyCart = () => {
 
 window.onload = function onload() {
   products();
-  loadCartLocal()
-  emptyCart()
+  loadCartLocal();
+  emptyCart();
 };

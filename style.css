@@ -67,6 +67,7 @@
   display: flex;
   flex-basis: 30%;
   flex-flow: column wrap;
+  background-color: yellow;
 }
 
 .cart .cart__title {

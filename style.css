@@ -1,3 +1,15 @@
+body {
+  background-color: bisque;
+}
+
+.cart__item {
+  border: 2px solid blue;
+  border-radius: 5px;
+  box-sizing: border-box;
+  padding: 10px;
+  text-align: center;
+}
+
 .top-bar {
   align-items: center;
   display: flex;
@@ -55,6 +67,12 @@
   width: 100%;
 }
 
+.item .item__price {
+  flex-grow: 1;
+  padding: 10px;
+  text-align: center;
+}
+
 .item .item__add {
   background-color: green;
   border: 0;
@@ -73,4 +91,8 @@
   flex-basis: 1;
   font-size: 16pt;
   text-align: center;
+}
+
+.loading {
+  background-color: beige;
 }

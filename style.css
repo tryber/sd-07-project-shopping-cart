@@ -74,3 +74,20 @@
   font-size: 16pt;
   text-align: center;
 }
+
+.loading {
+  border: 10px solid rgba(0, 0, 0, 0.1);
+  height: 30px;
+  width: 30px;
+
+  border-left-color: royalblue;
+  border-radius: 40px;
+
+  animation: spin 1s infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

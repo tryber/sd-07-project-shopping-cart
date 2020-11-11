@@ -30,6 +30,18 @@
   justify-content: center;
 }
 
+.loading {
+  align-items: center;
+  background-color: rgb( 193, 248, 156 );
+  border: solid blue 1px;
+  border-radius: 5px;
+  display: none;
+  font-size: xx-large;
+  height: 10%;
+  justify-content: center;
+  width: 70%;
+}
+
 .item {
   border: 2px solid blue;
   border-radius: 5px;

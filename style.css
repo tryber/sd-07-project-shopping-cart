@@ -74,3 +74,20 @@
   font-size: 16pt;
   text-align: center;
 }
+
+.loading {
+  border: 16px solid whitesmoke;
+  border-top: 16px solid blue;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 0.5s linear infinite;
+}
+
+@keyframes spin {
+
+  0% { transform: rotate( 0deg ); }
+
+  100% { transform: rotate( 360deg ); }
+
+}

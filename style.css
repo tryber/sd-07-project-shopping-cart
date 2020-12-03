@@ -74,3 +74,11 @@
   font-size: 16pt;
   text-align: center;
 }
+
+.active {
+  display: block;
+}
+
+.inactive {
+  display: none;
+}

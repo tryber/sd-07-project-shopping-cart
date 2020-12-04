@@ -4,27 +4,22 @@ function createProductImageElement(imageSource) {
   img.src = imageSource;
   return img;
 }
-
 function createCustomElement(element, className, innerText) {
   const e = document.createElement(element);
   e.className = className;
   e.innerText = innerText;
   return e;
 }
-
 function createProductItemElement({ sku, name, image }) {
   const section = document.createElement('section');
   section.className = 'item';
-  const addToCartButton = createCustomElement('button', 'item__add', 'Adicionar ao carrinho!');
-  addToCartButton.addEventListener('click', selectedItem);
   section.appendChild(createCustomElement('span', 'item__sku', sku));
   section.appendChild(createCustomElement('span', 'item__title', name));
   section.appendChild(createProductImageElement(image));
-  section.appendChild(addToCartButton);
+  section.appendChild(createCustomElement('button', 'item__add', 'Adicionar ao carrinho!'));
   return section;
 }
-
-function totalPrice() {
+function totalAmountInCart() {
   let total = 0;
   const cartList = document.querySelector('.cart__items').childNodes;
   cartList.forEach((item) => {
@@ -36,8 +31,7 @@ function totalPrice() {
     });
   });
 }
-
-function removeProducts(id) {
+function removeProductsFromLocalStorage(id) {
   const list = Object.keys(localStorage);
   if (id === undefined) {
     list.forEach(item => localStorage.removeItem(item));
@@ -46,9 +40,9 @@ function removeProducts(id) {
 }
 function cartItemClickListener(event) {
   const id = event.target.dataset.sku;
-  removeProducts(id);
+  removeProductsFromLocalStorage(id);
   event.target.remove();
-  totalPrice();
+  totalAmountInCart();
 }
 const emptyCart = document.querySelector('.empty-cart');
 emptyCart.addEventListener('click', () => {
@@ -56,15 +50,15 @@ emptyCart.addEventListener('click', () => {
   while (selected.firstChild) {
     selected.firstChild.remove();
   }
-  removeProducts();
-  totalPrice();
+  removeProductsFromLocalStorage();
+  totalAmountInCart();
 });
-
 function createCartItemElement({ sku, name, salePrice }) {
   const li = document.createElement('li');
   li.className = 'cart__item';
   li.innerText = `SKU: ${sku} | NAME: ${name} | PRICE: $${salePrice}`;
   li.dataset.sku = sku;
+  // li.dataset.salePrice = salePrice;
   li.addEventListener('click', cartItemClickListener);
   return li;
 }
@@ -76,7 +70,7 @@ function addItemToCart(id) {
     const selected = document.querySelector('.cart__items');
     selected.appendChild(finalItem);
     localStorage.setItem(sku, finalItem.innerHTML);
-    totalPrice();
+    totalAmountInCart();
   });
 }
 function getProductsFromLocalStorage() {
@@ -89,26 +83,28 @@ function getProductsFromLocalStorage() {
     li.addEventListener('click', cartItemClickListener);
     const selected = document.querySelector('.cart__items');
     selected.appendChild(li);
-    totalPrice();
+    totalAmountInCart();
   });
 }
 function getIdFromEvent(event) {
   const id = event.target.parentElement.firstChild.innerText;
   addItemToCart(id);
 }
-function loadingSet() {
+function loadingOn() {
   const div = document.createElement('div');
   div.className = 'loading';
   div.innerText = 'loading';
   const selected = document.querySelector('.items');
   selected.appendChild(div);
+  // document.querySelector('.loading').style.display = 'flex';
 }
-function loadingOffSet() {
+function loadingOff() {
   const selected = document.querySelector('.items');
   selected.firstChild.remove();
+  // document.querySelector('.loading').style.display = 'none';
 }
-const loadApi = () => {
-  loadingSet();
+const loadProducts = () => {
+  loadingOn();
   const endpoint = 'https://api.mercadolibre.com/sites/MLB/search?q=computador';
   fetch(endpoint).then(resp => resp.json()).then((data) => {
     const items = document.querySelector('.items');
@@ -119,12 +115,11 @@ const loadApi = () => {
       item.lastChild.addEventListener('click', getIdFromEvent);
     });
   });
-
-  setTimeout(loadingOffSet, 2000);
+    setTimeout((loadingOff), 2000);
 };
 
 window.onload = function onload() {
-  loadApi();
-  totalPrice();
+  loadProducts();
+  totalAmountInCart();
   getProductsFromLocalStorage();
 };

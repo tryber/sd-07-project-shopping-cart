@@ -59,3 +59,72 @@ emptyCart.addEventListener('click', () => {
   removeProducts();
   totalPrice();
 });
+
+function createCartItemElement({ sku, name, salePrice }) {
+  const li = document.createElement('li');
+  li.className = 'cart__item';
+  li.innerText = `SKU: ${sku} | NAME: ${name} | PRICE: $${salePrice}`;
+  li.dataset.sku = sku;
+  li.addEventListener('click', cartItemClickListener);
+  return li;
+}
+function addItemToCart(id) {
+  const endpoint = `https://api.mercadolibre.com/items/${id}`;
+  fetch(endpoint).then(response => response.json()).then((data) => {
+    const { id: sku, title: name, price: salePrice } = data;
+    const finalItem = createCartItemElement({ sku, name, salePrice });
+    const selected = document.querySelector('.cart__items');
+    selected.appendChild(finalItem);
+    localStorage.setItem(sku, finalItem.innerHTML);
+    totalPrice();
+  });
+}
+function getProductsFromLocalStorage() {
+  const itemsFromLocalStorage = Object.entries(localStorage);
+  itemsFromLocalStorage.forEach((item) => {
+    const li = document.createElement('li');
+    li.className = 'cart__item';
+    li.innerText = item[1];
+    li.dataset.sku = item[0];
+    li.addEventListener('click', cartItemClickListener);
+    const selected = document.querySelector('.cart__items');
+    selected.appendChild(li);
+    totalPrice();
+  });
+}
+function getIdFromEvent(event) {
+  const id = event.target.parentElement.firstChild.innerText;
+  addItemToCart(id);
+}
+function loadingSet() {
+  const div = document.createElement('div');
+  div.className = 'loading';
+  div.innerText = 'loading';
+  const selected = document.querySelector('.items');
+  selected.appendChild(div);
+}
+function loadingOffSet() {
+  const selected = document.querySelector('.items');
+  selected.firstChild.remove();
+}
+const loadApi = () => {
+  loadingSet();
+  const endpoint = 'https://api.mercadolibre.com/sites/MLB/search?q=computador';
+  fetch(endpoint).then(resp => resp.json()).then((data) => {
+    const items = document.querySelector('.items');
+    data.results.forEach((element) => {
+      const { id: sku, title: name, thumbnail: image } = element;
+      const item = createProductItemElement({ sku, name, image });
+      items.appendChild(item);
+      item.lastChild.addEventListener('click', getIdFromEvent);
+    });
+  });
+
+    setTimeout((loadingOffSet, 2000);
+};
+
+window.onload = function onload() {
+  loadApi();
+  totalPrice();
+  getProductsFromLocalStorage();
+};

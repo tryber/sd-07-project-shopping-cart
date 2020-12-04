@@ -120,7 +120,7 @@ const loadApi = () => {
     });
   });
 
-    setTimeout(loadingOffSet, 2000);
+  setTimeout(loadingOffSet, 2000);
 };
 
 window.onload = function onload() {

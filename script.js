@@ -64,7 +64,7 @@ const selectedItem = (event) => {
       };
       cartItems.appendChild(createCartItemElement(objectProduct));
 
-         totalPrice();
+          totalPrice();
       setLocalStorage();
     });
 };
@@ -96,7 +96,7 @@ const fetchItems = () => {
     .then(response => response.json())
     .then((object) => {
       const items = document.querySelector('.items');
-      const loading = document.querySelector('.loading');
+      const loading = document.querySelector('.load');
       loading.remove();
       const arrayResults = object.results;
       arrayResults.forEach((element) => {

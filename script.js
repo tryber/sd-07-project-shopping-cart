@@ -125,7 +125,6 @@ function loadItems(itens) {
     listItens.appendChild(createProductItemElement(item));
   });
 }
-
 async function fetchProductsFromApi(currency = 'computador') {
   createLoading();
   const endpoint = `https://api.mercadolibre.com/sites/MLB/search?q=${currency}`;
@@ -135,7 +134,6 @@ async function fetchProductsFromApi(currency = 'computador') {
   removeLoading();
   return loadItems(itens);
 }
-
 function handlerSearchEvent() {
   const currency = document.querySelector('#search_item').value;
   cleanList();

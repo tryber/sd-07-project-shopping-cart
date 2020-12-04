@@ -64,7 +64,7 @@ const selectedItem = (event) => {
       };
       cartItems.appendChild(createCartItemElement(objectProduct));
 
-          totalPrice();
+      totalPrice();
       setLocalStorage();
     });
 };

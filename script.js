@@ -5,9 +5,9 @@ function createProductImageElement(imageSource) {
   return img;
 }
 function createCustomElement(element, className, innerText) {
-  const Element = document.createElement(element);
-  Element.className = className;
-  Element.innerText = innerText;
+  const e = document.createElement(element);
+  e.className = className;
+  e.innerText = innerText;
   return e;
 }
 function totalPrice() {
@@ -71,7 +71,7 @@ const selectedItem = (event) => {
 
 function createProductItemElement({ sku, name, image }) {
   const section = document.createElement('section');
-  section.className = 'item';
+  section.className = 'items';
   const addToCartButton = createCustomElement('button', 'item__add', 'Adicionar ao carrinho!');
   addToCartButton.addEventListener('click', selectedItem);
   section.appendChild(createCustomElement('span', 'item__sku', sku));

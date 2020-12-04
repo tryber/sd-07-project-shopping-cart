@@ -95,8 +95,8 @@ const fetchItems = () => {
   fetch(endpoint)
     .then(response => response.json())
     .then((object) => {
-      const items = document.querySelector('.items');
-      const loading = document.querySelector('.load');
+      const items = document.querySelector('.item');
+      const loading = document.querySelector('.loading');
       loading.remove();
       const arrayResults = object.results;
       arrayResults.forEach((element) => {
